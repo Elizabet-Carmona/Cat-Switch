@@ -1,0 +1,163 @@
+body{
+  background:#9a7aa0;
+  width: 100%;
+  height: 100%;
+  }
+
+#wall{
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  margin: 0 auto;
+
+}
+
+#wall *{
+  transition: all .5s ease;
+  
+}
+
+#wall.night .moon{
+    top: 0px
+}
+#wall.night .sun {
+    top: 500px
+}
+
+#wall .moon{
+    top: 500px;
+}
+#wall .sun{
+    top: 20px
+}
+
+#wall.night .window{
+  background: #324949;
+}
+
+.window{
+  display: block;
+  position: relative;
+  width: 235px;
+  height: 235px;
+  background: #82d8d4;
+  border-radius: 100%;
+  margin: 30px auto;
+  border: 8px solid #b5aeae;
+  box-shadow: 0px 0px 5px   
+  rgba(0,0,0,0.25) inset; inset;
+  overflow: hidden; 
+  z-index: 1;
+  
+}
+
+.sun {
+  display: block;
+  background: #fffc8d;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 100%;
+  box-shadow: 0px 0px 40px #FFEE94;
+  left: 30px;
+  top: 20px;
+  
+}
+
+#Cat{
+  display: block;
+  height: auto;
+  width: 160px;
+  margin: 15px auto 0 auto;
+  z-index: 2;
+  position:relative;
+  
+}
+
+#Cat:hover{
+  transform: translateY(5%);
+  transition: all .2s ease
+}
+
+#Cat:hover .gato-st1 {
+  transform: translateY(5%) scaleY(0.3);
+
+}
+
+#wall.night #Cat:hover .st3 {
+  transform: translateY(5%) scaleY(0.3) scaleX(0.8) scaleY(1.2);
+
+}
+
+#Cat .gato-st1, .st3 {
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#Cat:hover .st3 {
+  transform: translateY(5%) scaleY(0.3) scaleX(0.2);
+
+}
+
+#ojo-der, #ojo-izq{
+transform: scaleX(0.3);
+transform-origin: center;
+transform-box: fill-box;
+}
+
+#wall.night #ojo-der, 
+#wall.night #ojo-izq{
+transform: scaleX(0.9);
+transform-origin: center;
+transform-box: fill-box;
+}
+
+.moon{
+ display: block;
+  background: #ffff;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border-radius: 100%;
+  box-shadow: 0px 0px 40px #FFFF;
+  left: 50px;
+  top: 5px; 
+}
+
+#switch{
+  width: 0px;
+  height: 0px;
+  visibility: hidden;
+ }
+
+label{
+  width: 100px;
+  height: 50px;
+  background: #66486D;
+  border-radius: 100px;
+  box-shadow: inset 0px 0px 125px -40px rgba(20,20,20,20.80);
+  display:block;
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+label:after {
+  content: '';
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  top: 5px;
+	left: 5px;
+  background: #e2e2e2;
+  border-radius: 90px;
+  box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.24);
+  transition: 0.3s;  
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
